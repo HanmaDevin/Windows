@@ -24,5 +24,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'luochen1990/rainbow'
 Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
+Plug 'github/copilot.vim'
 
 call plug#end()
