@@ -10,6 +10,7 @@ function admin {
 }
 
 Import-Module PSColor
+Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
 
 Set-Alias -Name sudo -Value admin
 
@@ -38,6 +39,7 @@ function ga { git add . }
 function gp { git push }
 
 function editposh { vim $profile }
+function editvim { vim $HOME\vimfiles\vimrc }
 
 function deac { deactivate }
 function startenv { .\bin\Activate.ps1 }
