@@ -1,8 +1,12 @@
 set backspace=indent,eol,start
+set smartindent
 set nocompatible
+set noexpandtab
+set shiftwidth=0
+set softtabstop=0
+set smarttab
 filetype on
 filetype plugin on
-filetype indent on
 syntax on
 set relativenumber
 set tabstop=4
