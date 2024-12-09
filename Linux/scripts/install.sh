@@ -52,10 +52,20 @@ add_wallpaper() {
 
 case $answer in
   1)
-    install_packages "apt" "zip" "ufw" "zsh" "fish" "unzip" "wget" "curl" "neovim" "eza" "neofetch" "btop" "gamemode" "mangohud" "zoxide" "fzf" "bat" "kitty"
+    install_packages "apt" "zip" "ufw" "zsh" "fish" "unzip" "wget" "curl" "neovim" "eza" "neofetch" "btop" "gamemode" "mangohud" "zoxide" "fzf" "bat" "kitty" "geany"
     configure_git
     add_ssh_key
     config_ufw
+
+	echo "Adding geany colorschemes"
+
+	if [[ ! -d "$HOME/.config/geany/colorschemes" ]]; then
+        mkdir -p "$HOME/.config/geany/colorschemes"
+    fi
+
+	cp -a "$HOME/windows/Linux/geany/colorschemes/." "$HOME/.config/geany/colorschemes"
+
+	echo "Finished!"
 
     echo "Adding btop config"
 
@@ -118,10 +128,20 @@ case $answer in
     fi
     ;;
   2)
-    install_packages "dnf" "zip" "ufw" "zsh" "openrgb" "fish" "unzip" "wget" "curl" "neovim" "eza" "neofetch" "btop" "gamemode" "mangohud" "zoxide" "fzf" "bat" "kitty"
+    install_packages "dnf" "zip" "ufw" "zsh" "fish" "unzip" "wget" "curl" "neovim" "eza" "neofetch" "btop" "gamemode" "mangohud" "zoxide" "fzf" "bat" "kitty" "geany"
     configure_git
     add_ssh_key
     config_ufw
+
+	echo "Adding geany colorschemes"
+
+	if [[ ! -d "$HOME/.config/geany/colorschemes" ]]; then
+        mkdir -p "$HOME/.config/geany/colorschemes"
+    fi
+
+	cp -a "$HOME/windows/Linux/geany/colorschemes/." "$HOME/.config/geany/colorschemes"
+
+	echo "Finished!"
     
     echo "Adding btop config"
 
@@ -184,10 +204,20 @@ case $answer in
     fi
     ;;
   3)
-    install_packages "zypper" "zip" "ufw" "zsh" "fish" "unzip" "wget" "curl" "neovim" "eza" "neofetch" "btop" "gamemode" "mangohud" "zoxide" "fzf" "bat" "kitty"
+    install_packages "zypper" "zip" "ufw" "zsh" "fish" "unzip" "wget" "curl" "neovim" "eza" "neofetch" "btop" "gamemode" "mangohud" "zoxide" "fzf" "bat" "kitty" "geany"
     configure_git
     add_ssh_key
     config_ufw
+
+	echo "Adding geany colorschemes"
+
+	if [[ ! -d "$HOME/.config/geany/colorschemes" ]]; then
+        mkdir -p "$HOME/.config/geany/colorschemes"
+    fi
+
+	cp -a "$HOME/windows/Linux/geany/colorschemes/." "$HOME/.config/geany/colorschemes"
+
+	echo "Finished!"
     
     echo "Adding btop config"
 
@@ -250,15 +280,21 @@ case $answer in
     fi
     ;;
   4)
-    packages=("zip" "zsh" "ufw" "fish" "unzip" "wget" "curl" "neovim" "eza" "neofetch" "btop" "gamemode" "mangohud" "zoxide" "fzf" "bat" "kitty")
-    for package in "${packages[@]}"; do
-      sudo pacman -S --no-confirm "$package" || { echo "Failed to install $package"; exit 1; }
-    done
-    
-    config_ufw
+    install_packages "pacman" "zip" "ufw" "zsh" "fish" "unzip" "wget" "curl" "neovim" "eza" "neofetch" "btop" "gamemode" "mangohud" "zoxide" "fzf" "bat" "kitty" "geany"
     configure_git
     add_ssh_key
-    
+    config_ufw
+
+	echo "Adding geany colorschemes"
+
+	if [[ ! -d "$HOME/.config/geany/colorschemes" ]]; then
+        mkdir -p "$HOME/.config/geany/colorschemes"
+    fi
+
+	cp -a "$HOME/windows/Linux/geany/colorschemes/." "$HOME/.config/geany/colorschemes"
+
+	echo "Finished!"
+
     echo "Adding btop config"
 
     if [[ ! -d "$HOME/.config/btop" ]]; then
