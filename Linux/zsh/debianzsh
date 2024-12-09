@@ -64,7 +64,7 @@ alias lt='eza --icons=auto --tree' # list folder as tree
 alias cd="z"
 alias refresh="source ~/.zshrc"
 
-# dnf
+# apt
 alias get="sudo apt-get install -y"
 alias remove="sudo apt-get autoremove"
 alias update="sudo apt update && apt upgrade"
@@ -73,8 +73,8 @@ alias editzsh="code ~/.zshrc"
 
 # visual
 alias open="xdg-open"
-alias cat='bat --theme "Dracula"'
-alias bat='bat --theme "Dracula"'
+alias cat='batcat --theme "Dracula"'
+alias bat='batcat --theme "Dracula"'
 alias q="exit"
 
 # git
