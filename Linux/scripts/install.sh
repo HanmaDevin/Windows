@@ -128,7 +128,7 @@ case $answer in
     fi
     ;;
   2)
-    install_packages "dnf" "zip" "ufw" "zsh" "fish" "unzip" "wget" "curl" "neovim" "eza" "neofetch" "btop" "gamemode" "mangohud" "zoxide" "fzf" "bat" "kitty" "geany"
+    install_packages "dnf" "zip" "ufw" "zsh" "unzip" "wget" "curl" "eza" "btop" "gamemode" "mangohud" "zoxide" "fzf" "bat" "geany" "mediawriter"
     configure_git
     add_ssh_key
     config_ufw
