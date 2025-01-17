@@ -21,6 +21,12 @@ config_ufw() {
   sudo ufw enable
 }
 
+install_nitch() {
+	echo "Installing nitch..."
+	wget https://raw.githubusercontent.com/unxsh/nitch/main/setup.sh && sh setup.sh
+	echo "Finished!"
+}
+
 configure_git() {
   read -p "Want to configure git? (y/n): " gitconfig
   if [[ $gitconfig == "y" ]]; then
@@ -52,7 +58,7 @@ add_wallpaper() {
 
 case $answer in
   1)
-    install_packages "apt" "zip" "ufw" "zsh" "fish" "unzip" "wget" "curl" "neovim" "eza" "neofetch" "btop" "gamemode" "mangohud" "zoxide" "fzf" "bat" "kitty" "geany"
+    install_packages "apt" "zip" "ufw" "zsh" "fish" "unzip" "wget" "curl" "neovim" "eza" "btop" "gamemode" "mangohud" "zoxide" "fzf" "bat" "kitty" "geany" "geany-plugins"
     configure_git
     add_ssh_key
     config_ufw
@@ -102,6 +108,8 @@ case $answer in
     echo "Finished!"
 
     add_wallpaper
+    
+    install_nitch
 
     echo "Adding font and cursor"
 
@@ -178,6 +186,8 @@ case $answer in
     echo "Finished!"
 
     add_wallpaper
+    
+    install_nitch
 
     echo "Adding font and cursor"
 
@@ -204,7 +214,7 @@ case $answer in
     fi
     ;;
   3)
-    install_packages "zypper" "zip" "ufw" "zsh" "fish" "unzip" "wget" "curl" "neovim" "eza" "neofetch" "btop" "gamemode" "mangohud" "zoxide" "fzf" "bat" "kitty" "geany"
+    install_packages "zypper" "zip" "ufw" "zsh" "fish" "unzip" "wget" "curl" "neovim" "eza" "btop" "gamemode" "mangohud" "zoxide" "fzf" "bat" "kitty" "geany"
     configure_git
     add_ssh_key
     config_ufw
@@ -254,6 +264,8 @@ case $answer in
     echo "Finished!"
 
     add_wallpaper
+    
+    install_nitch
 
     echo "Adding font and cursor"
 
@@ -280,7 +292,7 @@ case $answer in
     fi
     ;;
   4)
-    install_packages "pacman" "zip" "ufw" "zsh" "fish" "unzip" "wget" "curl" "neovim" "eza" "neofetch" "btop" "gamemode" "mangohud" "zoxide" "fzf" "bat" "kitty" "geany"
+    install_packages "pacman" "zip" "ufw" "zsh" "fish" "unzip" "wget" "curl" "neovim" "eza" "btop" "gamemode" "mangohud" "zoxide" "fzf" "bat" "kitty" "geany"
     configure_git
     add_ssh_key
     config_ufw
@@ -330,6 +342,8 @@ case $answer in
     echo "Finished!"
 
     add_wallpaper
+    
+    install_nitch
 
     echo "Adding font and cursor"
 
