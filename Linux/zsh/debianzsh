@@ -66,7 +66,7 @@ alias refresh="source ~/.zshrc"
 
 # apt
 alias get="sudo apt-get install -y"
-alias remove="sudo apt-get remove"
+alias remove="sudo apt-get remove -y"
 alias update="sudo apt update && apt upgrade -y"
 
 alias editzsh="nano ~/.zshrc"
