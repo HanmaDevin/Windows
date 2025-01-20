@@ -1,7 +1,7 @@
 $packages = @(
     "ajeetdsouza.zoxide",
     "WhatsApp",
-    "Debian.Debian",
+    "Offsec.KaliLinux",
     "sharkdp.bat",
     "GNU.Nano",
     "lazygit",
