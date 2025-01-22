@@ -1,6 +1,5 @@
 $packages = @(
     "ajeetdsouza.zoxide",
-    "Offsec.KaliLinux",
     "sharkdp.bat",
     "GNU.Nano",
     "lazygit",
@@ -36,6 +35,12 @@ New-Item -Path "$HOME\Pictures" -Name "Wallpaper" -ItemType "directory"
 Copy-Item -Path "$HOME\Windows\wallpaper\*" -Destination "$HOME\Pictures\Wallpaper"
 
 Write-Output "Done!"
+
+Write-Output "Installing WSL Kali-Linux"
+
+wsl install -d kali-linux
+
+Write-Ouput "Done!"
 
 Write-Output "Copying Powershell Profile..."
 
