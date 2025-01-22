@@ -38,7 +38,7 @@ Write-Output "Done!"
 
 Write-Output "Installing WSL Kali-Linux"
 
-wsl install -d kali-linux
+wsl --install -d kali-linux
 
 Write-Ouput "Done!"
 
