@@ -1,6 +1,5 @@
 $packages = @(
     "ajeetdsouza.zoxide",
-    "WhatsApp",
     "Offsec.KaliLinux",
     "sharkdp.bat",
     "GNU.Nano",
@@ -8,7 +7,7 @@ $packages = @(
     "python",
     "direnv",
     "KDE.okular",
-    "ohmyposh",
+    "JanDeDobbeleer.OhMyPosh",
     "Valve.steam",
     "Google.chrome",
     "oracle.jdk.23",
@@ -19,6 +18,12 @@ foreach ($package in $packages) {
     Start-Process -NoNewWindow -Wait -FilePath "winget" -ArgumentList "install", $package
 }
 
+Write-Output "Installing Fonts..."
+
+Copy-Item -Path "$HOME\Windows\JetBrainsMono\*" -Destination "C:\Windows\Fonts"
+
+Write-Output "Done!"
+
 Write-Output "Installing Powershell Modules..."
 
 Install-Module PSColor -Scope CurrentUser
@@ -27,13 +32,14 @@ Write-Output "Done!"
 
 Write-Output "Installing Wallpapers..."
 
-.\windows\get-wallpaper.ps1
+New-Item -Path "$HOME\Pictures" -Name "Wallpaper" -ItemType "directory"
+Copy-Item -Path "$HOME\Windows\wallpaper\*" -Destination "$HOME\Pictures\Wallpaper"
 
 Write-Output "Done!"
 
 Write-Output "Copying Powershell Profile..."
 
-Copy-Item .\windows\Microsoft.PowerShell_profile.ps1 $PROFILE
+Copy-Item -Path "$HOME\Windows\Microsoft.PowerShell_profile.ps1" -Destination $PROFILE
 
 Write-Output "Done!"
 
