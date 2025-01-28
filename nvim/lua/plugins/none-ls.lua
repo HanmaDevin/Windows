@@ -17,11 +17,12 @@ return {
     config = function()
       require("mason-null-ls").setup({
         ensure_installed = {
-          "blackd-client",
+          "biome",
           "stylua",
           "google-java-format",
           "prettier",
           "ast-grep",
+          ""
         },
         methods = {
           diagnostics = true,
