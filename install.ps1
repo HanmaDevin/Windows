@@ -28,6 +28,7 @@ Write-Output "Done!"
 Write-Output "Installing Powershell Modules..."
 
 Install-Module PSColor -Scope CurrentUser
+Install-Module syntax-highlighting -Scope CurrentUser
 
 Write-Output "Done!"
 

@@ -1,5 +1,8 @@
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\catppuccin_mocha.omp.json" | Invoke-Expression
 
+Import-Module syntax-highlighting
+Import-Module PSColor
+
 function admin {
   if($args.Count -gt 0) {
     $argList = "& '" + $args + "'"
