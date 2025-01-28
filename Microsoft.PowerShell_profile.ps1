@@ -1,4 +1,4 @@
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\rudolfs-light.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\catppuccin_mocha.omp.json" | Invoke-Expression
 
 function admin {
   if($args.Count -gt 0) {
@@ -9,12 +9,10 @@ function admin {
   }
 }
 
-Import-Module PSColor
-Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
-
 Set-Alias -Name sudo -Value admin
 
 function lg { lazygit }
+function v { nvim }
 
 function c { Clear-Host }
 function ll { Get-ChildItem -Path $pwd -File }
@@ -38,8 +36,8 @@ function gs { git status }
 function ga { git add . }
 function gp { git push }
 
-function editposh { vim $profile }
-function editvim { vim $HOME\vimfiles\vimrc }
+function editposh { nvim $profile }
+function editvim { nvim $HOME\vimfiles\vimrc }
 
 function deac { deactivate }
 function startenv { .\bin\Activate.ps1 }

@@ -10,7 +10,8 @@ $packages = @(
     "Valve.steam",
     "Google.chrome",
     "oracle.jdk.23",
-    "7-zip"
+    "7-zip",
+    "Neovim.Neovim",
 )
 
 foreach ($package in $packages) {
@@ -63,5 +64,12 @@ Get-Service -Name ssh-agent | Set-Service -StartupType Manual
 Start-Service ssh-agent
 
 ssh-add $HOME/.ssh/id_ed25519
+
+Write-Output "Done!"
+
+Write-Output "Configuring Neovim..."
+
+New-Item -Path "$HOME\AppData\Local" -Name "nvim" -ItemType "directory"
+Copy-Item -Path "$HOME\Windows\nvim" -Destination "$HOME\AppData\Local\nvim"
 
 Write-Output "Done!"
