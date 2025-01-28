@@ -12,6 +12,7 @@ $packages = @(
     "oracle.jdk.23",
     "7-zip",
     "Neovim.Neovim",
+    "fastfetch"
 )
 
 foreach ($package in $packages) {
@@ -70,6 +71,13 @@ Write-Output "Done!"
 Write-Output "Configuring Neovim..."
 
 New-Item -Path "$HOME\AppData\Local" -Name "nvim" -ItemType "directory"
-Copy-Item -Path "$HOME\Windows\nvim" -Destination "$HOME\AppData\Local\nvim"
+Copy-Item -Path "$HOME\Windows\nvim\*" -Destination "$HOME\AppData\Local\nvim"
+
+Write-Output "Done!"
+
+Write-Output "Configuring fastfetch..."
+
+New-Item -Path "$HOME\AppData\Local" -Name "fastfetch" -ItemType "directory"
+Copy-Item -Path "$HOME\Windows\fastfetch\*" -Destination "$HOME\AppData\Local\fastfetch"
 
 Write-Output "Done!"
