@@ -1,28 +1,18 @@
 return {
   "folke/which-key.nvim",
-  dependencies = {
-    "echasnovski/mini.nvim",
+  event = "VeryLazy",
+  opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
   },
-  config = function()
-    require("which-key").setup({
-      plugins = {
-        marks = true,
-        registers = true,
-        spelling = {
-          enabled = true,
-        },
-        presets = {
-          operators = true,
-          motions = true,
-          text_objects = true,
-          windows = true,
-          nav = true,
-          z = true,
-          g = true,
-        },
-      },
-
-      show_help = true,
-    })
-  end,
+  keys = {
+    {
+      "<leader>?",
+      function()
+        require("which-key").show({ global = true })
+      end,
+      desc = "Buffer Local Keymaps (which-key)",
+    },
+  },
 }
