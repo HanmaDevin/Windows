@@ -1,12 +1,11 @@
 $packages = @(
     "ajeetdsouza.zoxide",
     "sharkdp.bat",
-    "GNU.Nano",
     "lazygit",
     "python",
     "direnv",
     "KDE.okular",
-    "JanDeDobbeleer.OhMyPosh",
+    "starship",
     "Valve.steam",
     "Google.chrome",
     "oracle.jdk.23",
@@ -39,12 +38,6 @@ Copy-Item -Path "$HOME\Windows\wallpaper\*" -Destination "$HOME\Pictures\Wallpap
 
 Write-Output "Done!"
 
-Write-Output "Installing WSL Kali-Linux"
-
-wsl --install -d kali-linux
-
-Write-Ouput "Done!"
-
 Write-Output "Copying Powershell Profile..."
 
 Copy-Item -Path "$HOME\Windows\Microsoft.PowerShell_profile.ps1" -Destination $PROFILE
@@ -55,6 +48,7 @@ Write-Output "Configuring Git..."
 
 git config --global user.name "HanmaDevin"
 git config --global user.email "devinbc14@gmail.com"
+git config --global pull.rebase true
 
 Write-Output "Done!"
 
@@ -69,16 +63,15 @@ ssh-add $HOME/.ssh/id_ed25519
 
 Write-Output "Done!"
 
-Write-Output "Configuring Neovim..."
+Write-Output "Copying Configuration..."
 
 New-Item -Path "$HOME\AppData\Local" -Name "nvim" -ItemType "directory"
 Copy-Item -Path "$HOME\Windows\nvim\*" -Destination "$HOME\AppData\Local\nvim"
 
-Write-Output "Done!"
-
-Write-Output "Configuring fastfetch..."
-
 New-Item -Path "$HOME\AppData\Local" -Name "fastfetch" -ItemType "directory"
 Copy-Item -Path "$HOME\Windows\fastfetch\*" -Destination "$HOME\AppData\Local\fastfetch"
+
+New-Item -Path "$HOME\AppData\Local" -Name "starship" -ItemType "directory"
+Copy-Item -Path "$HOME\Windows\starship.toml -Destination "$HOME\AppData\Local\starship"
 
 Write-Output "Done!"

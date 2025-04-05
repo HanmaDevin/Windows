@@ -1,5 +1,3 @@
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\catppuccin_mocha.omp.json" | Invoke-Expression
-
 Import-Module syntax-highlighting
 Import-Module PSColor
 
@@ -16,6 +14,8 @@ Set-Alias -Name sudo -Value admin
 
 function lg { lazygit }
 function v { nvim }
+function vi { nvim }
+function vim { nvim }
 
 function c { Clear-Host }
 function ll { Get-ChildItem -Path $pwd -File }
@@ -40,7 +40,6 @@ function ga { git add . }
 function gp { git push }
 
 function editposh { nvim $profile }
-function editvim { nvim $HOME\vimfiles\vimrc }
 
 function deac { deactivate }
 function startenv { .\bin\Activate.ps1 }
@@ -82,4 +81,5 @@ function pkill ($name) {
   Get-Process $name -ErrorAction SilentContinue | Stop-Process
 }
 
+Invoke-Expression (&starship init powershell)
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
