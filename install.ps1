@@ -1,6 +1,7 @@
 $packages = @(
     "ajeetdsouza.zoxide",
     "sharkdp.bat",
+    "Git.Git",
     "lazygit",
     "python",
     "direnv",
@@ -11,7 +12,13 @@ $packages = @(
     "oracle.jdk.23",
     "7-zip",
     "Neovim.Neovim",
-    "fastfetch"
+    "fastfetch",
+    "sxyazi.yazi", "yan.FFmpeg", 
+    "jqlang.jq",
+    "sharkdp.fd",
+    "BurntSushi.ripgrep.MSVC", 
+    "junegunn.fzf", 
+    "ImageMagick.ImageMagick"
 )
 
 foreach ($package in $packages) {
@@ -44,6 +51,19 @@ Copy-Item -Path "$HOME\Windows\Microsoft.PowerShell_profile.ps1" -Destination $P
 
 Write-Output "Done!"
 
+Write-Output "Installing yazi plugins..."
+    
+ya pack -a Rolv-Apneseth/starship
+ya pack -a yazi-rs/plugins:git
+ya pack -a yazi-rs/plugins:full-border
+ya pack -a grappas/wl-clipboard
+ya pack -a Reledia/glow
+ya pack -a TD-Sky/sudo
+ya pack -a Lil-Dank/lazygit
+ya pack -a yazi-rs/plugins:jump-to-char
+
+Write-Output "Done!"
+
 Write-Output "Configuring Git..."
 
 git config --global user.name "HanmaDevin"
@@ -67,6 +87,9 @@ Write-Output "Copying Configuration..."
 
 New-Item -Path "$HOME\AppData\Local" -Name "nvim" -ItemType "directory"
 Copy-Item -Path "$HOME\Windows\nvim\*" -Destination "$HOME\AppData\Local\nvim"
+
+New-Item -Path "$HOME\AppData\Local" -Name "yazi" -ItemType "directory"
+Copy-Item -Path "$HOME\Windows\yazi\*" -Destination "$HOME\AppData\Local\yazi"
 
 New-Item -Path "$HOME\AppData\Local" -Name "fastfetch" -ItemType "directory"
 Copy-Item -Path "$HOME\Windows\fastfetch\*" -Destination "$HOME\AppData\Local\fastfetch"
