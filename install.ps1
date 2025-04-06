@@ -1,7 +1,6 @@
 $packages = @(
     "ajeetdsouza.zoxide",
     "sharkdp.bat",
-    "Git.Git",
     "lazygit",
     "python",
     "direnv",
@@ -27,21 +26,14 @@ foreach ($package in $packages) {
 
 Write-Output "Installing Fonts..."
 
-Copy-Item -Path "$HOME\Windows\JetBrainsMono\*" -Destination "C:\Windows\Fonts"
-
-Write-Output "Done!"
-
-Write-Output "Installing Powershell Modules..."
-
-Install-Module PSColor -Scope CurrentUser
-Install-Module syntax-highlighting -Scope CurrentUser
+Copy-Item -Path -Recurse "$HOME\Windows\JetBrainsMono\" -Destination "C:\Windows\Fonts"
 
 Write-Output "Done!"
 
 Write-Output "Installing Wallpapers..."
 
 New-Item -Path "$HOME\Pictures" -Name "Wallpaper" -ItemType "directory"
-Copy-Item -Path "$HOME\Windows\wallpaper\*" -Destination "$HOME\Pictures\Wallpaper"
+Copy-Item -Path "$HOME\Windows\Wallpaper\*" -Destination "$HOME\Pictures\Wallpaper"
 
 Write-Output "Done!"
 
@@ -86,13 +78,13 @@ Write-Output "Done!"
 Write-Output "Copying Configuration..."
 
 New-Item -Path "$HOME\AppData\Local" -Name "nvim" -ItemType "directory"
-Copy-Item -Path "$HOME\Windows\nvim\*" -Destination "$HOME\AppData\Local\nvim"
+Copy-Item -Path -Recurse "$HOME\Windows\nvim\" -Destination "$HOME\AppData\Local\"
 
 New-Item -Path "$HOME\AppData\Local" -Name "yazi" -ItemType "directory"
-Copy-Item -Path "$HOME\Windows\yazi\*" -Destination "$HOME\AppData\Local\yazi"
+Copy-Item -Path -Recurse "$HOME\Windows\yazi\" -Destination "$HOME\AppData\Local\"
 
 New-Item -Path "$HOME\AppData\Local" -Name "fastfetch" -ItemType "directory"
-Copy-Item -Path "$HOME\Windows\fastfetch\*" -Destination "$HOME\AppData\Local\fastfetch"
+Copy-Item -Path -Recurse "$HOME\Windows\fastfetch\" -Destination "$HOME\AppData\Local\"
 
 New-Item -Path "$HOME\AppData\Local" -Name "starship" -ItemType "directory"
 Copy-Item -Path "$HOME\Windows\starship.toml -Destination "$HOME\AppData\Local\starship"
