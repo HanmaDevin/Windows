@@ -2,6 +2,7 @@ $packages = @(
     "ajeetdsouza.zoxide",
     "sharkdp.bat",
     "lazygit",
+    "wezterm",
     "python",
     "direnv",
     "KDE.okular",
@@ -79,6 +80,8 @@ Write-Output "Copying Configuration..."
 
 New-Item -Path "$HOME\AppData\Local" -Name "nvim" -ItemType "directory"
 Copy-Item -Path -Recurse "$HOME\Windows\nvim\" -Destination "$HOME\AppData\Local\"
+
+Copy-Item -Path "$HOME\Windows\.wezterm.lua" -Destination "$HOME"
 
 New-Item -Path "$HOME\AppData\Local" -Name "yazi" -ItemType "directory"
 Copy-Item -Path -Recurse "$HOME\Windows\yazi\" -Destination "$HOME\AppData\Local\"

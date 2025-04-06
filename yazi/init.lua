@@ -1,5 +1,5 @@
 require("git"):setup()
 require("full-border"):setup()
 require("starship"):setup({
-	config_file = "~/.config/starship.toml",
+	config_file = "$HOME/.config/starship.toml",
 })
