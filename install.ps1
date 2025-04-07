@@ -3,6 +3,7 @@ $packages = @(
     "sharkdp.bat",
     "lazygit",
     "wezterm",
+    "vscode",
     "python",
     "direnv",
     "KDE.okular",
