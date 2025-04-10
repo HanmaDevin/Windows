@@ -1,5 +1,6 @@
 $packages = @(
     "ajeetdsouza.zoxide",
+    "Docker.DockerDesktop",
     "sharkdp.bat",
     "glazewm",
     "lazygit",
