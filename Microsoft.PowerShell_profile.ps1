@@ -1,8 +1,9 @@
 function admin {
-  if($args.Count -gt 0) {
+  if ($args.Count -gt 0) {
     $argList = "& '" + $args + "'"
     Start-Process "$psHome\pwsh.exe" -Verb runAs -ArgumentList $argList
-  } else {
+  }
+  else {
     Start-Process "$psHome\pwsh.exe" -Verb runAs
   }
 }
@@ -10,15 +11,11 @@ function admin {
 Set-Alias -Name sudo -Value admin
 
 function lg { lazygit }
-function v ($arg) { nvim $arg }
-function vi ($arg) { nvim $arg }
-function vim ($arg) { nvim $arg }
-
+function cat ($file) { bat $file }
+Set-Alias -Name cat -Value bat
 function c { Clear-Host }
 function ll { Get-ChildItem -Path $pwd -File }
 function q { exit }
-
-function HHU { Set-Location D:\HHU }
 
 function .. { z .. }
 function ... { z ..\.. }
@@ -26,17 +23,16 @@ function .3 { z ..\..\.. }
 function .4 { z ..\..\..\.. }
 function .5 { z ..\..\..\..\.. }
 
-function refresh { . $profile}
+function refresh { . $profile }
 
 function get ($package) { winget install $package }
 function remove ($package) { winget uninstall $package }
 
-function github { Set-Location D:\Github }
 function gs { git status }
 function ga { git add . }
 function gp { git push }
 
-function editposh { nvim $profile }
+function editposh { code $profile }
 
 function deac { deactivate }
 function startenv { .\bin\Activate.ps1 }
@@ -52,9 +48,9 @@ function find-file ($name) {
   }
 }
 
-function unzip ($file, $des=$pwd) {
+function unzip ($file, $des = $pwd) {
   Write-Output("Extracting", $file, "to", $des)
-  $fullFile = Get-ChildItem -Path $pwd -Filter .\$file | ForEach-Object{$_.FullName}
+  $fullFile = Get-ChildItem -Path $pwd -Filter .\$file | ForEach-Object { $_.FullName }
   Expand-Archive -Path $fullFile -DestinationPath $des
 }
 

@@ -13,7 +13,6 @@ $packages = @(
     "oracle.jdk.23",
     "7-zip",
     "Neovim.Neovim",
-    "sxyazi.yazi", 
     "yan.FFmpeg", 
     "jqlang.jq",
     "sharkdp.fd",
