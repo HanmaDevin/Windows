@@ -1,8 +1,8 @@
 $packages = @(
     "ajeetdsouza.zoxide",
     "sharkdp.bat",
+    "glazewm",
     "lazygit",
-    "wezterm",
     "vscode",
     "python",
     "direnv",
@@ -13,8 +13,8 @@ $packages = @(
     "oracle.jdk.23",
     "7-zip",
     "Neovim.Neovim",
-    "fastfetch",
-    "sxyazi.yazi", "yan.FFmpeg", 
+    "sxyazi.yazi", 
+    "yan.FFmpeg", 
     "jqlang.jq",
     "sharkdp.fd",
     "BurntSushi.ripgrep.MSVC", 
@@ -82,8 +82,6 @@ Write-Output "Copying Configuration..."
 New-Item -Path "$HOME\AppData\Local" -Name "nvim" -ItemType "directory"
 Copy-Item -Path -Recurse "$HOME\Windows\nvim\" -Destination "$HOME\AppData\Local\"
 
-Copy-Item -Path "$HOME\Windows\.wezterm.lua" -Destination "$HOME"
-
 New-Item -Path "$HOME\AppData\Local" -Name "yazi" -ItemType "directory"
 Copy-Item -Path -Recurse "$HOME\Windows\yazi\" -Destination "$HOME\AppData\Local\"
 
@@ -91,6 +89,6 @@ New-Item -Path "$HOME\AppData\Local" -Name "fastfetch" -ItemType "directory"
 Copy-Item -Path -Recurse "$HOME\Windows\fastfetch\" -Destination "$HOME\AppData\Local\"
 
 New-Item -Path "$HOME\AppData\Local" -Name "starship" -ItemType "directory"
-Copy-Item -Path "$HOME\Windows\starship.toml -Destination "$HOME\AppData\Local\starship"
+Copy-Item -Path "$HOME\Windows\starship.toml -Destination" "$HOME\AppData\Local\starship"
 
 Write-Output "Done!"

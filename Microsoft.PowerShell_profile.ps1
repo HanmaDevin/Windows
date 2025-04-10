@@ -1,6 +1,3 @@
-Import-Module syntax-highlighting
-Import-Module PSColor
-
 function admin {
   if($args.Count -gt 0) {
     $argList = "& '" + $args + "'"
@@ -13,9 +10,9 @@ function admin {
 Set-Alias -Name sudo -Value admin
 
 function lg { lazygit }
-function v { nvim }
-function vi { nvim }
-function vim { nvim }
+function v ($arg) { nvim $arg }
+function vi ($arg) { nvim $arg }
+function vim ($arg) { nvim $arg }
 
 function c { Clear-Host }
 function ll { Get-ChildItem -Path $pwd -File }
