@@ -11,7 +11,7 @@ $packages = @(
     "KDE.okular",
     "starship",
     "Valve.steam",
-    "ModernFlyouts.Modernflyouts",
+    "ModernFlyouts.ModernFlyouts",
     "Google.chrome",
     "oracle.jdk.23",
     "7-zip",
